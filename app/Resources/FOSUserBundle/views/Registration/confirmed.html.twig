@@ -1,0 +1,17 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+    <p class="privacy text-center">
+        WITAJ NA POKŁADZIE! MOŻESZ ZACZĄĆ <a href="/">JUŻ TERAZ</a>.
+    </p>
+
+    <!--
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+    -->
+{% endblock fos_user_content %}
