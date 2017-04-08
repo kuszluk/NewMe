@@ -1,0 +1,73 @@
+<div class="navbar-custom-menu">
+    <ul class="nav navbar-nav">
+
+        <!-- WYBÓR KOLORYSTYKI -->
+        <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-paint-brush"></i>
+                <span class="label label-warning"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="header">Wybierz kolorystyke strony!</li>
+                <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                        <li>
+                            <a href="#" data-skin="skin-blue">
+                                <i class="fa fa-paint-brush text-aqua"></i> Niebieska
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" data-skin="skin-green">
+                                <i class="fa fa-paint-brush text-green"></i> Zielona
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" data-skin="skin-red">
+                                <i class="fa fa-paint-brush text-red"></i> Czerwona
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" data-skin="skin-black">
+                                <i class="fa fa-paint-brush"></i> Czarna
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <!-- MENU UŻYTKOWNIKA -->
+        <li class="dropdown user user-menu mr-30">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="{{ asset('images/avatar/user.jpg') }}" class="user-image" alt="User Image">
+                <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                    <img src="{{ asset('images/avatar/user.jpg') }}" class="img-circle" alt="User Image">
+
+                    <p>
+                        Alexander Pierce
+                        <small>Zarejestrowany 12.02.2017</small>
+                    </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                    <div class="pull-right">
+                        <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</div>

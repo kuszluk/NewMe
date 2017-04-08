@@ -16,6 +16,8 @@ class DefaultController extends Controller
         // Just render homepage and wait for login/register action
         if (TRUE === $this->get('security.authorization_checker')->isGranted('ROLE_USER'))
         {
+            $menuItem = new \Avanzu\AdminThemeBundle\Model\MenuItemModel('item', 'Item', 'item_route_name');
+            $menuLabel = new \Avanzu\AdminThemeBundle\Model\MenuItemModel('label', 'Label', false);
             return $this->render(':Lists:base.html.twig');
         }
         else{

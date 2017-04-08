@@ -1,0 +1,51 @@
+.box-500{
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.mh-415{
+    min-height: 401px;
+    max-height: 401px;
+    overflow:auto;
+}
+
+.clear{
+    clear: both;
+}
+
+.fav-lists{
+    color: white;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.fav-lists .progress.xs{
+    height: 4px;
+}
+
+.mr-30{
+    margin-right: 30px;
+}
+
+.mh-415 .info-box{
+    min-height: 0;
+}
+
+.mh-415 .info-box-icon{
+    height: 34px;
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.mh-415 .info-box-text{
+    font-weight: 600;
+}
+
+.alert-fixed {
+    position: fixed;
+    top: 55px;
+    right: 0px;
+    width: 20%;
+    z-index: 9999;
+    opacity: 0.9;
+}

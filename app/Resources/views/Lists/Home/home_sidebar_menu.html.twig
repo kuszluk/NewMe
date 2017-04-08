@@ -1,0 +1,52 @@
+{% block avanzu_sidebar %}
+    <ul class="sidebar-menu">
+
+        <!-- MENU -->
+        <li class="header">MENU GŁÓWNE</li>
+            <li>
+                <a href="/">
+                    <i class="fa fa-dashboard"></i> <span>Panel główny</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/">
+                    <i class="fa fa-pie-chart"></i> <span>Statystyki</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/">
+                    <i class="fa fa-calendar"></i> <span>Kalendarz</span>
+                </a>
+            </li>
+
+        <!-- POWIADOMIENIA -->
+        <li class="header">POWIADOMIENIA</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Pilne!</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Istotne</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Informacje</span></a></li>
+
+        <li class="header">AKTUALNE ZADANIA</li>
+    </ul>
+
+    <div class="col-sm-12 fav-lists">
+        <!-- Progress bars -->
+        <div class="clearfix">
+            <span class="pull-left">Task #1</span>
+            <small class="pull-right">90%</small>
+        </div>
+        <div class="progress xs">
+            <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
+        </div>
+
+        <div class="clearfix">
+            <span class="pull-left">Task #2</span>
+            <small class="pull-right">70%</small>
+        </div>
+        <div class="progress xs">
+            <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+        </div>
+    </div>
+
+{% endblock %}

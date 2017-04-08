@@ -77,3 +77,6 @@ fos_user:
         address:        noreply@example.com
         sender_name:    Demo App
 
+avanzu_admin_theme:
+            bower_bin: /usr/local/bower # that's the default value
+
