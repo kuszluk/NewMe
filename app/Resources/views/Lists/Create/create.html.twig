@@ -30,25 +30,40 @@
     {{ parent() }}
     <script>
         var num = 2;
+        var wrapper = $(".item_group"); //Fields wrapper
 
-        $('#add_item').click(function() {
-            $('#list_items').append(''+
-                '<div class="item_group">'+
+        $(document).ready(function() {
 
-                '<div class="form-group col-sm-9">'+
-                '<label for="title">Zadanie #'+num+'</label>'+
-                '<input id="title" class="form-control" type="text">'+
-                '</div>'+
+            $('.box-footer').on("click", "#add_item", function(e) {
+                e.preventDefault();
 
-                '<div class="form-group col-sm-3">'+
-                '<label for="number">Ilość</label>'+
-                '<input id="number" class="form-control" type="number" min="1" step="1">'+
-                '</div>'+
+                $('#list_items').append(''+
+                    '<div id="item_'+num+'" class="item_group">'+
 
-                '<input type="hidden" name="item_id" id="item_id" value="'+num+'">'+
+                    '<div class="form-group col-sm-7">'+
+                    '<label for="title">Nazwa zadania</label>'+
+                    '<input id="title" class="form-control" type="text">'+
+                    '</div>'+
 
-                '</div>' );
-            num++;
+                    '<div class="form-group col-sm-3">'+
+                    '<label for="number">Ilość</label>'+
+                    '<input id="number" class="form-control" type="number" min="1" step="1">'+
+                    '</div>'+
+
+                    '<div class="close col-sm-1 text-red"> x </div>'+
+
+                    '<input type="hidden" name="item_id" id="item_id" value="'+num+'">'+
+
+                    '</div>' );
+                num++;
+            });
+
+            $('#list_items').on("click",".close", function(e){
+                e.preventDefault(); $(this).parent('div').remove(); num--;
+            });
+
         });
+
+
     </script>
 {% endblock %}
