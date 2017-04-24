@@ -49,3 +49,28 @@
     z-index: 9999;
     opacity: 0.9;
 }
+
+.empty-msg{
+    text-align: center;
+    padding: 15px;
+}
+
+select {
+    font-family: "FontAwesome", Arial;
+    font-size: 22px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.item_group{
+    border-left: 3px solid #3c8dbc;
+    min-height: 75px;
+    margin: 10px 0px 10px 0px;
+}

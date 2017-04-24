@@ -1,13 +1,47 @@
-{% block lista_list %}
-
+    {# DIV PRZEGLĄD LIST #}
     <div class="col-sm-6">
+
+        {# BOX PRZEGLĄD LIST #}
         <div class="box box-primary box-500">
 
+            {# BOX HEADER #}
             <div class="box-header with-border">
                 <h3 class="box-title">Przeglądaj swoje listy</h3>
-            </div><!-- /.box-header -->
+            </div>
+
+            {# BOX BODY #}
             <div class="box-body mh-415">
 
+                {#  BRAK LIST  #}
+                {%  if lists|length == 0 %}
+
+                    <div class="empty-msg">
+                        <h3>Brak list!</h3>
+                        <p>Kliknij zielony przysk poniżej, żeby stworzyć swoją pierwszą liste.</p>
+                        <p> <a href="/add"><button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i></button></a> </p>
+                    </div>
+
+                {% endif %}
+
+                {# WYŚWIETLANIE LIST #}
+                {% for list in lists %}
+
+                    <div class="info-box bg-{{ lists.color }}">
+                        <span class="info-box-icon"><i class="fa fa-{{ lists.icon }}"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{ lists.title }}</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: {{ lists.percent }}%"></div>
+                            </div>
+                            <span class="progress-description">
+                                {{ lists.percent }}% ukończone | Edytuj
+                            </span>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+                {#
                 <div class="info-box bg-red">
                     <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
                     <div class="info-box-content">
@@ -31,7 +65,7 @@
                         <span class="progress-description">
                                 50% ukończone | Edytuj
                             </span>
-                    </div><!-- /.info-box-content -->
+                    </div>
                 </div>
 
                 <div class="info-box bg-green">
@@ -44,7 +78,7 @@
                         <span class="progress-description">
                                 30% ukończone | Edytuj
                             </span>
-                    </div><!-- /.info-box-content -->
+                    </div>
                 </div>
 
                 <div class="info-box bg-yellow">
@@ -57,18 +91,28 @@
                         <span class="progress-description">
                                 10% ukończone | Edytuj
                             </span>
-                    </div><!-- /.info-box-content -->
-                </div>
+                    </div>
 
-            </div><!-- /.box-body -->
-            <div class="box-footer">
-                <div class="btn-group pull-right">
-                    <button type="button" class="btn btn-default"><i class="fa fa-print"></i></button>
-                    <button type="button" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></button>
-                    <button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
-                </div>
             </div>
-        </div>
-    </div>
+#}
 
-{% endblock %}
+            </div> {# END | BOX BODY #}
+
+            {%  if lists|length != 0 %}
+
+                {# BOX FOOTER #}
+                <div class="box-footer">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default"><i class="fa fa-print"></i></button>
+                        <button type="button" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></button>
+                        <button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
+                    </div>
+                </div> {# END | BOX FOOTER #}
+
+            {% endif %}
+
+
+        </div> {# END | BOX PRZEGLĄD LIST #}
+
+
+    </div>

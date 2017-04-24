@@ -1,0 +1,16 @@
+{% extends ':Lists:base.html.twig' %}
+
+{% block page_content %}
+
+    <!-- KATALOG LIST -->
+    {% include  ':Lists/Home:home_content_lists.html.twig' %}
+
+    <!-- DETALE LISTY -->
+    {% include  ':Lists/Home:home_content_detail.html.twig' %}
+    <div class="clear"></div>
+
+    <!-- STATYSTYKI -->
+    {% include  ':Lists/Home:home_content_stats.html.twig' %}
+    <div class="clear"></div>
+
+{% endblock %}

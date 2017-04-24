@@ -1,0 +1,54 @@
+{% extends ':Lists:base.html.twig' %}
+
+
+{#     NAGŁÓWEK I PODTYTUŁ     #}
+{% block page_title %}Tworzenie listy{% endblock %}
+{% block page_subtitle %}Dodaj nową listę do kolekcji.{% endblock %}
+
+
+{#     DODATKOWE SKRYPTY     #}
+    {% block javascripts %}
+        {{ parent() }}
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    {% endblock %}
+
+{% block page_content %}
+
+    <!-- SZCZEGÓŁY LISTY -->
+    {% include  ':Lists/Create:create_details.html.twig' %}
+
+    <!-- ZADANIA LISTY -->
+    {% include  ':Lists/Create:create_items.html.twig' %}
+    <div class="clear"></div>
+
+{% endblock %}
+
+
+{% block javascripts_inline %}
+    //Date picker
+
+    {{ parent() }}
+    <script>
+        var num = 2;
+
+        $('#add_item').click(function() {
+            $('#list_items').append(''+
+                '<div class="item_group">'+
+
+                '<div class="form-group col-sm-9">'+
+                '<label for="title">Zadanie #'+num+'</label>'+
+                '<input id="title" class="form-control" type="text">'+
+                '</div>'+
+
+                '<div class="form-group col-sm-3">'+
+                '<label for="number">Ilość</label>'+
+                '<input id="number" class="form-control" type="number" min="1" step="1">'+
+                '</div>'+
+
+                '<input type="hidden" name="item_id" id="item_id" value="'+num+'">'+
+
+                '</div>' );
+            num++;
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,43 @@
+<div class="col-sm-6">
+    <div class="box box-primary box-500">
+
+        <div class="box-header with-border">
+            <h3 class="box-title">Dodaj zadania</h3>
+        </div><!-- /.box-header -->
+
+
+        <div class="box-body mh-415">
+
+            <form action="" method="POST" id="list_items">
+
+                <div class="item_group">
+
+                    <div class="form-group col-sm-9">
+                        <label for="title">Zadanie #1</label>
+                        <input id="title" class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <label for="number">Ilość</label>
+                        <input id="number" class="form-control" type="number" min="1" step="1">
+                    </div>
+
+                    <input type="hidden" name="item_id" id="item_id" value="1">
+
+                </div>
+
+
+            </form>
+
+        </div><!-- /.box-body -->
+
+        <div class="box-footer">
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default" id="add_item"><i class="fa fa-plus-circle"></i></button>
+                <a href="/create"><button type="button" class="btn btn-success"><i class="fa fa-save"></i></button></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,65 +1,94 @@
 {% extends 'AvanzuAdminThemeBundle:layout:base-layout.html.twig' %}
 
 {#     TYTUŁ DOKUMENTU     #}
-{% block title %}NewMe - Panel{% endblock %}
+    {% block title %}NewMe - Panel{% endblock %}
+
+
+{#     LOGO STRONY     #}
+    {% block avanzu_logo %}
+        <a href="/" class="logo">
+            <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            {{ block('title') }}
+        </a>
+    {% endblock %}
+
 
 {#     NAGŁÓWEK I PODTYTUŁ     #}
-{% block page_title %}Panel główny{% endblock %}
-{% block page_subtitle %}Zarządzaj swoimi listami{% endblock %}
+    {% block page_title %}Panel główny{% endblock %}
+    {% block page_subtitle %}Zarządzaj swoimi listami{% endblock %}
 
-{#     DODATKOWE SKRYPTY     #}
-{% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-{% endblock %}
 
 {#     DODATKOWE STYLE     #}
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('js/myjs.js') }}"></script>
-{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+        <link href="{{ asset('bundles/avanzuadmintheme/vendor/jquery-ui/themes/base/datepicker.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    {% endblock %}
+
+
+{#     DODATKOWE SKRYPTY     #}
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('js/myjs.js') }}"></script>
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('bundles/avanzuadmintheme/vendor/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+    {% endblock %}
 
 
 {#     MENU GÓRNE     #}
-{% block avanzu_navbar %}
-    {% include  ':Lists/Home:home_navbar.html.twig' %}
-{% endblock %}
+    {% block avanzu_navbar %}
+        {% include  ':Lists/Home:home_navbar.html.twig' %}
+    {% endblock %}
 
 
 {#     MENU BOCZNE     #}
-{% block avanzu_sidebar %}
-    {% include  ':Lists/Home:home_sidebar_menu.html.twig' %}
-{% endblock %}
+    {% block avanzu_sidebar %}
+        {% include  ':Lists/Home:home_sidebar_menu.html.twig' %}
+    {% endblock %}
 
 
 {#     ZAWARTOŚĆ STRONY     #}
-{% block page_content %}
+    {% block page_content %}
+    {% endblock %}
 
-    <!-- KATALOG LIST -->
-    {% include  ':Lists/Home:home_content_lists.html.twig' %}
 
-    <!-- DETALE LISTY -->
-    {% include  ':Lists/Home:home_content_detail.html.twig' %}
-    <div class="clear"></div>
+{#     FOOTER     #}
+    {% block avanzu_admin_footer %}
+        <footer class="main-footer">
+        </footer>
+    {% endblock %}
 
-    <!-- STATYSTYKI -->
-    {% include  ':Lists/Home:home_content_stats.html.twig' %}
-    <div class="clear"></div>
 
-    <div class="alert-fixed">
+{#     SKRYPTY INLINE     #}
+{% block javascripts_inline %}
+        {{ parent() }}
 
-    <div class="alert alert-danger alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4><i class="icon fa fa-ban"></i> Błąd zapisu!</h4>
-        Wprowadzono niekompletne dane!
-    </div>
+    //Date picker
+    <script>
+        $('#datepicker').datepicker({
+        autoclose: true
+        });
 
-    <div class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4><i class="icon fa fa-check"></i> Zmiany zapisane!</h4>
-        Twoja lista jest już gotowa do odczytu.
-    </div>
-
-    </div>
+    </script>
 
 {% endblock %}
+
+{# POWIADOMIENIA #}
+    {% block alert %}
+        <div class="alert-fixed">
+            {#
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Błąd zapisu!</h4>
+                    Wprowadzono niekompletne dane!
+                </div>
+
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-check"></i> Zmiany zapisane!</h4>
+                    Twoja lista jest już gotowa do odczytu.
+                </div>
+            #}
+
+        </div>
+    {% endblock %}

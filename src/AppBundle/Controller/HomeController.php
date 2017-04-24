@@ -12,7 +12,7 @@ class HomeController extends Controller
      * @Route("/home", name="homepage")
      */
 
-    public function indexAction($name)
+    public function indexAction()
     {
         return $this->render('@FOSUser/layout.html.twig');
     }
