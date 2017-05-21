@@ -80,4 +80,15 @@ input[type="number"] {
     bottom: 0;
     width: 100%;
     right: 0;
+<<<<<<< HEAD
+}
+
+.text-white{
+    color: white;
+}
+
+.text-white:hover{
+    color: #eee;
+=======
+>>>>>>> origin/master
 }
