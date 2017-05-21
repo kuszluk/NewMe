@@ -28,7 +28,17 @@
                 var details = ['','','','',''];
                 var i = 0;
 
+<<<<<<< HEAD
+                details[0] = $( this ).find('.info-box-text').text();
+
+                $('.addTaskHref').attr( "href", '/add_task/' + $( this ).data('id') );
+
+                $('.dl-horizontal dd').each( function(){
+                    $( this ).text( 'wczytywanie...' );
+                });
+=======
                 details[0] = $(this ).find('.info-box-text').text()
+>>>>>>> origin/master
 
                 // Wyślij zapytanie AJAX
                 $.post('{{path('ajaxRequest')}}',
@@ -45,6 +55,10 @@
                             });
 
                             // TODO: Jeśli nie ma zadań, napis
+<<<<<<< HEAD
+                            console.log(response.tasks);
+=======
+>>>>>>> origin/master
                             // Jeśli są zadania wypisz zadania
                         }
 

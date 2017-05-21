@@ -25,9 +25,14 @@ class AjaxController extends Controller
             ->find($listId);
 
         // Pozyskaj dane o listach użytkownika
+<<<<<<< HEAD
+        $em = $this->getDoctrine()->getManager();
+        $tasks = $em->getRepository('AppBundle:Task')->findBy([ 'listId' => $listId ]);
+=======
         $tasks = $this->getDoctrine()
             ->getRepository('AppBundle:UserLists')
             ->find($listId);
+>>>>>>> origin/master
 
         // TODO: Podmień dane na forma zgodny z JSON
         $response = [
@@ -43,4 +48,8 @@ class AjaxController extends Controller
         // Zwróć dane do AJAX
         return new Response(json_encode($response));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

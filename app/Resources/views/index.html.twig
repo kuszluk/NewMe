@@ -34,9 +34,9 @@
     <!-- data-spy - śledź pozycje na stronie (dynamiczne pokazywanie zawartości) -->
     <body data-spy="scroll" data-target="#navbar-scroll">
 
-    <!-- Preloader (znaczek ładowania)  -->
+    <!-- Preloader (znaczek ładowania)
     <div id="preloader"></div>
-    <div id="top"></div>
+    <div id="top"></div> -->
 
     <!-- Parallax (przesuwanie obrazu w tle) -->
     <div class="fullscreen landing parallax" style="background-image:url({{ asset('images/bg.jpg') }});" data-img-width="2000"
@@ -74,21 +74,7 @@
                     <div class="signup-header wow fadeInUp">
                         <h3 class="form-title text-center">ZACZNIJ JUŻ DZIŚ!</h3>
                         {% block login %}
-                        <form class="form-header" action="#" role="form" method="POST" id="#">
-                            <div class="form-group">
-                                <input class="form-control input-lg" name="email" id="email" type="email"
-                                       placeholder="Twój email" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control input-lg" name="password" id="password" type="password"
-                                       placeholder="Hasło" required>
-                            </div>
-                            <div class="form-group last">
-                                <input type="submit" class="btn btn-warning btn-block btn-lg" value="ZALOGUJ">
-                            </div>
-                            <p class="privacy text-center">NIE MASZ JESZCZE KONTA? <a href="#">ZAREJESTRUJ SIĘ</a> JUŻ DZIŚ!
-                            </p>
-                        </form>
+
                         {% endblock %}
                     </div>
 
@@ -375,13 +361,14 @@
         <script src="{{ asset('js/wow.min.js') }}"></script>
         <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
-    {% endblock %}
+
 
     <!-- Inicjalizacja animacji (wow.js) -->
     <script>
         new WOW().init();
     </script>
 
+    {% endblock %}
     </body>
 
 </html>

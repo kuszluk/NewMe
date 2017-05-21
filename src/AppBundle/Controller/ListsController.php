@@ -14,6 +14,11 @@ use Symfony\Component\HttpFoundation\Request;
 class ListsController extends Controller
 {
     /**
+<<<<<<< HEAD
+     *
+     *
+=======
+>>>>>>> origin/master
      * Tworzenie nowej listy
      * @Route("/add", name="add")
      */
@@ -83,7 +88,51 @@ class ListsController extends Controller
 
 
 
+<<<<<<< HEAD
+
+
     /**
+     *
+     *
+     * Usuwanie listy
+     * @Route("/deleteList/{id}", name="deleteList")
+     */
+    public function deleteListAction($id, Request $request)
+    {
+
+        // Zainicjuj manadżera Doctrine
+        $em = $this->getDoctrine()->getManager();
+
+        // Znajdź listę w bazie
+        $list = $em->getRepository('AppBundle:UserLists')->find($id);
+        $tasks = $em->getRepository('AppBundle:Task')->find($id);
+
+        // Usuń listę
+        $em->remove($list);
+        $em->flush();
+
+        // Dodaj powiadomienie flash
+        $this->addFlash('notice', 'Lista usunięta!');
+
+
+        // replace this example code with whatever you need
+        return $this->redirectToRoute('homepage');
+
+    }
+
+
+
+
+
+
+
+
+    /**
+     *
+     *
+=======
+    /**
+>>>>>>> origin/master
      * Dodawanie nowych zadań do listy
      * @Route("/add_task/{id}", name="addTask")
      */
