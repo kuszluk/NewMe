@@ -26,75 +26,20 @@
                 {# WYŚWIETLANIE LIST #}
                 {% for list in lists %}
 
-                    <div class="info-box bg-{{ lists.color }}">
-                        <span class="info-box-icon"><i class="fa fa-{{ lists.icon }}"></i></span>
+                    <div class="listCat info-box bg-{{ list.color }}" data-id="{{ list.id }}" id="list_{{ list.id }}">
+                        <span class="info-box-icon"><i class="fa {{ list.icon }}"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">{{ lists.title }}</span>
+                            <span class="info-box-text">{{ list.title }}</span>
                             <div class="progress">
-                                <div class="progress-bar" style="width: {{ lists.percent }}%"></div>
+                                <div class="progress-bar" style="width: {{ list.percent }}%"></div>
                             </div>
                             <span class="progress-description">
-                                {{ lists.percent }}% ukończone | Edytuj
+                                {{ list.percent }}% ukończone | Edytuj
                             </span>
                         </div>
                     </div>
 
                 {% endfor %}
-
-                {#
-                <div class="info-box bg-red">
-                    <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Życie towarzyskie</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 20%"></div>
-                        </div>
-                        <span class="progress-description">
-                                20% ukończone | Edytuj
-                            </span>
-                    </div>
-                </div>
-
-                <div class="info-box bg-aqua">
-                    <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Ksiązki i filmy</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 50%"></div>
-                        </div>
-                        <span class="progress-description">
-                                50% ukończone | Edytuj
-                            </span>
-                    </div>
-                </div>
-
-                <div class="info-box bg-green">
-                    <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Prowadzenie bloga</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 30%"></div>
-                        </div>
-                        <span class="progress-description">
-                                30% ukończone | Edytuj
-                            </span>
-                    </div>
-                </div>
-
-                <div class="info-box bg-yellow">
-                    <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Imprezy</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 10%"></div>
-                        </div>
-                        <span class="progress-description">
-                                10% ukończone | Edytuj
-                            </span>
-                    </div>
-
-            </div>
-#}
 
             </div> {# END | BOX BODY #}
 
@@ -105,7 +50,7 @@
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-default"><i class="fa fa-print"></i></button>
                         <button type="button" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></button>
-                        <button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
+                        <a href="/add"><button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i></button></a>
                     </div>
                 </div> {# END | BOX FOOTER #}
 

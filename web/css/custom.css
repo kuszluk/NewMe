@@ -74,3 +74,10 @@ input[type="number"] {
     min-height: 75px;
     margin: 10px 0px 10px 0px;
 }
+
+.bottom-glue{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+}

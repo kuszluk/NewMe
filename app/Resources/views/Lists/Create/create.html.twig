@@ -16,54 +16,6 @@
 
     <!-- SZCZEGÓŁY LISTY -->
     {% include  ':Lists/Create:create_details.html.twig' %}
-
-    <!-- ZADANIA LISTY -->
-    {% include  ':Lists/Create:create_items.html.twig' %}
     <div class="clear"></div>
 
-{% endblock %}
-
-
-{% block javascripts_inline %}
-    //Date picker
-
-    {{ parent() }}
-    <script>
-        var num = 2;
-        var wrapper = $(".item_group"); //Fields wrapper
-
-        $(document).ready(function() {
-
-            $('.box-footer').on("click", "#add_item", function(e) {
-                e.preventDefault();
-
-                $('#list_items').append(''+
-                    '<div id="item_'+num+'" class="item_group">'+
-
-                    '<div class="form-group col-sm-7">'+
-                    '<label for="title">Nazwa zadania</label>'+
-                    '<input id="title" class="form-control" type="text">'+
-                    '</div>'+
-
-                    '<div class="form-group col-sm-3">'+
-                    '<label for="number">Ilość</label>'+
-                    '<input id="number" class="form-control" type="number" min="1" step="1">'+
-                    '</div>'+
-
-                    '<div class="close col-sm-1 text-red"> x </div>'+
-
-                    '<input type="hidden" name="item_id" id="item_id" value="'+num+'">'+
-
-                    '</div>' );
-                num++;
-            });
-
-            $('#list_items').on("click",".close", function(e){
-                e.preventDefault(); $(this).parent('div').remove(); num--;
-            });
-
-        });
-
-
-    </script>
 {% endblock %}

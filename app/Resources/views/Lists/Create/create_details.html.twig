@@ -1,8 +1,8 @@
 {# DIV PRZEGLĄD LIST #}
-<div class="col-sm-6">
+<div class="col-sm-12">
 
     {# BOX PRZEGLĄD LIST #}
-    <div class="box box-primary box-500">
+    <div class="box box-primary">
 
         {# BOX HEADER #}
         <div class="box-header with-border">
@@ -12,59 +12,7 @@
         {# BOX BODY #}
         <div class="box-body">
 
-                <form action="" method="POST" id="list_details">
-
-                    <div class="form-group">
-                        <label for="title">Tytuł</label>
-                        <input id="title" class="form-control" type="text">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="color">Kolor</label>
-                        <select id="color" class="form-control">
-                            <option value="aqua" class="bg-blue">Niebieski </option>
-                            <option value="red" class="bg-red">Czerwony</option>
-                            <option value="yellow" class="bg-yellow">Żółty</option>
-                            <option value="green" class="bg-green">Zielony</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="icon">Ikona</label>
-                        <select id="icon" class="form-control">
-                            <option value="fa-flag">&#xf024;</option>
-                            <option value="fa-star-o">&#xf006;</option>
-                            <option value="fa-shopping-basket">&#xf291;</option>
-                            <option value="fa-user">&#xf007;</option>
-                            <option value="fa-plus-square-o">&#xf196;</option>
-                            <option value="fa-pencil">&#xf040;</option>
-                            <option value="fa-paint-brush">&#xf1fc;</option>
-                            <option value="fa-motorcycle">&#xf21c;</option>
-                            <option value="fa-money">&#xf0d6;</option>
-                            <option value="fa-bar-chart">&#xf080;</option>
-                            <option value="fa-calendar">&#xf073;</option>
-                        </select>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>Data zakończenia</label>
-
-                        <div class="input-group date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <input type="text" class="form-control pull-right" id="datepicker">
-                        </div>
-                        <!-- /.input group -->
-                    </div>
-
-
-
-
-
-                </form>
-
+            {{ form(listCreateForm) }}
 
         </div> {# END | BOX PRZEGLĄD LIST #}
 

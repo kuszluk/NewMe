@@ -14,3 +14,43 @@
     <div class="clear"></div>
 
 {% endblock %}
+
+{#     SKRYPTY INLINE     #}
+{% block javascripts_inline %}
+    {{ parent() }}
+
+    <script>
+        $(document).ready(function() {
+
+            // Po kliknięciu na listę
+            $('.listCat').on( "click", function() {
+
+                var details = ['','','','',''];
+                var i = 0;
+
+                details[0] = $(this ).find('.info-box-text').text()
+
+                // Wyślij zapytanie AJAX
+                $.post('{{path('ajaxRequest')}}',
+                    {listID: $( this ).data('id')},
+
+                    function(response){
+                        if(response.success){
+                            details[1] = response.createdDate;
+                            details[2] = String(response.expiresDate);
+                            (response.finished ? details[3] = 'TAK' : details[3] = 'NIE');
+
+                            $('.dl-horizontal dd').each( function(){
+                                $( this ).text(details[i++]);
+                            });
+
+                            // TODO: Jeśli nie ma zadań, napis
+                            // Jeśli są zadania wypisz zadania
+                        }
+
+                    }, "json");
+            });
+        });
+    </script>
+
+{% endblock %}

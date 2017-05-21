@@ -61,15 +61,7 @@
 
 {#     SKRYPTY INLINE     #}
 {% block javascripts_inline %}
-        {{ parent() }}
-
-    //Date picker
-    <script>
-        $('#datepicker').datepicker({
-        autoclose: true
-        });
-
-    </script>
+    {{ parent() }}
 
 {% endblock %}
 

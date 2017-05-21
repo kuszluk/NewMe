@@ -1,0 +1,29 @@
+{% extends ':Lists/Create:create.html.twig' %}
+
+
+{% block page_content %}
+
+    {# DIV PRZEGLĄD LIST #}
+    <div class="col-sm-12">
+
+        {# BOX PRZEGLĄD LIST #}
+        <div class="box box-primary">
+
+            {# BOX HEADER #}
+            <div class="box-header with-border">
+                <h3 class="box-title">Dodaj zadania do listy</h3>
+            </div>
+
+            {# BOX BODY #}
+            <div class="box-body">
+
+                {{ form(taskCreateForm) }}
+
+            </div> {# END | BOX PRZEGLĄD LIST #}
+
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+{% endblock %}

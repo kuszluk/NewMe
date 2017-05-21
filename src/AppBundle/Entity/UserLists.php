@@ -18,6 +18,7 @@ class UserLists
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="listId")
      */
     private $id;
 
@@ -74,7 +75,11 @@ class UserLists
      * @var int
      *
      * @ORM\Column(name="user_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="User_id", referencedColumnName="id")
      */
+
+
     private $userId;
 
 
